@@ -43,7 +43,11 @@ RUN apt-get update && apt-get install -y python3-pip \
 # install zenoh
 # 수동으로 설치(install 시 발생하는 에러 원인 못찾는중)
 # install zenoh python API
-RUN apt-get update && pip install eclipse-zenoh 
+RUN apt-get update && pip install eclipse-zenoh
+# install pycdr
+#RUN python3 -m pip install pycdr==0.1.5
+RUN pip install pycdr==0.1.5
+
 # install zenohd(router)
 #RUN echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null \ 
 #  && apt-get update \
